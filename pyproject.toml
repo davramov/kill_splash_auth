@@ -27,7 +27,9 @@ dependencies = [
 
 ]
 dev-dependencies = [
-    "pytest"
+    "pytest",
+    "pre-commit",
+    "flake8"
 ]
 
 dynamic = ["version"]

@@ -104,14 +104,6 @@ async def get_user_info(user_info_url, access_token):
     return response.json()
 
 
-async def get_user_info(user_info_url, access_token):
-    """Unused but useful method for getting additional user information"""
-    response = httpx.get(
-        url=user_info_url, headers={"Authorization": "Bearer " + access_token}
-    )
-    return response.json()
-
-
 @oidc_router.get("/auth/code")
 async def endpoint_validate_ouath_code(request: Request):
     """
@@ -147,7 +139,7 @@ async def endpoint_validate_ouath_code(request: Request):
     encoded_jwt = jwt.encode(
         {
             "email": id_claims["email"],
-            "exp": datetime.now(tz=timezone.utc) + timedelta(seconds=config.token_time),
+            "exp": datetime.now(tz=timezone.utc) + timedelta(seconds=config.token_exp_time),
         },
         config.jwt_secret,
         algorithm="HS256",

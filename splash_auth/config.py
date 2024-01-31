@@ -5,7 +5,7 @@ logger = logging.getLogger("splash_auth.config")
 
 
 JWT_SECRET = os.environ["JWT_SECRET"]
-TOKEN_EXP_TIME = int(os.environ["TOKEN_EXP_TIME"])
+TOKEN_EXP_TIME = int(os.environ["TOKEN_EXP_TIME"], )
 OAUTH_AUTH_ENDPOINT = os.environ["OAUTH_AUTH_ENDPOINT"]
 OAUTH_CLIENT_ID = os.environ["OAUTH_CLIENT_ID"]
 OAUTH_CLIENT_SECRET = os.environ["OAUTH_CLIENT_SECRET"]
