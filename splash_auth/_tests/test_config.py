@@ -1,8 +1,3 @@
-import os
-
-
-
-
 def test_config(monkeypatch):
 
     monkeypatch.setenv("JWT_SECRET", "secret")
@@ -37,5 +32,3 @@ def test_config(monkeypatch):
     assert config.http_client_timeout_all == 1.0
     assert config.http_client_timeout_connect == 4.0
     assert config.http_client_timeout_pool == 10
-    
-    
